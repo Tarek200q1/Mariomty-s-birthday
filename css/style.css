@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  border-radius: 100vh;
+  width: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 21px 0px #0003 inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(49, 4, 4);
+  box-shadow: 0px 0px 10px 0px #eeeeee8c inset;
+  border-radius: 100vh;
+}
+body {
+  background-color: rgb(55, 52, 53);
+}
+.font-fam {
+  font-family: "Playwrite DK Loopet", cursive;
+  color: red;
+}
+.home {
+  background-image: url(../image/top-view-valentine-s-day-concept-with-copy-space.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.text-color {
+  color: rgba(255, 0, 0, 0.521);
+}
+.widtt {
+  margin-top: 150px !important;
+  padding: 20px;
+  width: 60%;
+}
+.bg-card {
+  background-color: rgb(55, 52, 53);
+}
+.iner {
+  border: solid 4px white;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.iner:hover {
+  transform: scale(1.1);
+}
+.layr {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: top 0.8s;
+  transition-delay: 0.3s;
+}
+.card:hover .layr {
+  top: 0;
+}
+.ffoonn {
+  font-family: "El Messiri", sans-serif;
+  color: red;
+}
+.ffoonnt {
+  font-family: "El Messiri", sans-serif;
+  color: white;
+}
+.baacc {
+  backdrop-filter: blur(10px);
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(550px);
+}
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.banner .content h1 {
+  font-family: "ICA Rubrik";
+  font-size: 16em;
+  line-height: 1em;
+  color: #25283b;
+  position: relative;
+  color: red;
+  text-shadow: red 20px 2px 30px;
+}
+.banner .content h1::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #d2d2d2;
+  color: transparent;
+}
+.banner .content .author {
+  font-family: Poppins;
+  text-align: right;
+  max-width: 200px;
+}
+.banner .content h2 {
+  font-size: 3em;
+}
+.banner .content .model {
+  background-image: url(images/model.png);
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 80px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
+  }
+  .banner .content h1 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 10px 20px #000;
+    font-size: 7em;
+  }
+  .banner .content .author {
+    color: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    z-index: 2;
+    max-width: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
+  }
+  .banner .content h1 {
+    font-size: 5em;
+  }
+}
+
+.gy-4 {
+  margin-bottom: 35px !important;
+}
+
+.bbo {
+  margin-top: 220px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 9, 0, 0.9)),
+    url(../image/marioma_1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  border-radius: 20px;
+}
+.contanet {
+  padding: 70px;
+  border: 7px solid #755533;
+  border-radius: 20px;
+}
+
+.font-lop {
+  font-family: "Exo", sans-serif;
+}
+
+.boll {
+  font-weight: bold;
+  font-size: 20px;
+}
